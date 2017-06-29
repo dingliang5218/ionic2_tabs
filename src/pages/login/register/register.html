@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      注册
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (tap)="dismiss()">关闭</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerForm" (ngSubmit)="(confirm(registerForm.value))">
+    <ion-list>
+      <ion-item>
+        <ion-label icon-only=""  left="">
+          <ion-icon name="person"></ion-icon>
+        </ion-label>
+        <ion-input type="tel" placeholder="请输入手机号" formControlName="username"></ion-input>
+      </ion-item>
+      <span padding-left *ngIf="!registerForm.controls.username.valid && registerForm.controls.username.touched"
+            color="red">
+          请输入正确手机号
+        </span>
+      <ion-item class="checkNumber">
+        <ion-input type="number" placeholder="请输入验证码" formControlName="verificationCode"></ion-input>
+        <ion-label icon-only="" left="" >
+          <ion-icon name="magnet"></ion-icon>
+        </ion-label>
+        <button type="button" name="verCodeBtn" ion-button color="red" item-right (click)="sendCode(registerForm.value)" [disabled]="canClick">
+          <ion-label >{{description}}</ion-label>
+        </button>
+      </ion-item>
+      <span padding-left
+            *ngIf="!registerForm.controls.verificationCode.valid&& registerForm.controls.verificationCode.touched"
+            color="red">请输入验证码</span>
+    <ion-item>
+    <ion-label icon-only="" left="">
+      <ion-icon name="lock"></ion-icon>
+    </ion-label>
+    <ion-input type="password" placeholder="请输入密码" formControlName="password"></ion-input>
+    </ion-item>
+
+    <span padding-left *ngIf="!registerForm.controls.password.valid && registerForm.controls.password.touched"
+    color="red">请输入至少6位长度密码</span>
+    </ion-list>
+      <button ion-button block type="submit" class="registerBtn" [disabled]="!registerForm.valid"  round color="red">注 册</button>
+  </form>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>用户信息反馈</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="feedBackForm">
+    <ion-textarea style="overflow-y:hidden; height:50px;"
+                  onpropertychange="this.style.height=this.scrollHeight + 'px'"
+                  oninput="this.style.height=this.scrollHeight + 'px'" formControlName="description"
+                  placeholder="请填写问题描述">
+    </ion-textarea>
+    <div *ngFor="let imagePath of imagePaths" class="pictures ">
+      <img src="{{imagePath}}" (click)="showPictures()"></div>
+    <div *ngIf="imagePaths.length<4" (click)="addPicture()" class="pictures add">
+      <ion-icon name="ios-add"></ion-icon>
+    </div>
+    <div>
+      <button ion-button type="submit" block (click)="showPictures()">保存</button>
+    </div>
+  </form>
+</ion-content>
+

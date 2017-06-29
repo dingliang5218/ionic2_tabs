@@ -1,0 +1,59 @@
+{
+  "_from": "cordova-plugin-android-permissions@0.10.0",
+  "_id": "cordova-plugin-android-permissions@0.10.0",
+  "_inBundle": false,
+  "_integrity": "sha1-xicm8ySMTGHR8ekkL5zbXr8KcRo=",
+  "_location": "/cordova-plugin-android-permissions",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-android-permissions@0.10.0",
+    "name": "cordova-plugin-android-permissions",
+    "escapedName": "cordova-plugin-android-permissions",
+    "rawSpec": "0.10.0",
+    "saveSpec": null,
+    "fetchSpec": "0.10.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/cordova-plugin-android-permissions/download/cordova-plugin-android-permissions-0.10.0.tgz",
+  "_shasum": "c62726f3248c4c61d1f1e9242f9cdb5ebf0a711a",
+  "_spec": "cordova-plugin-android-permissions@0.10.0",
+  "_where": "/Users/lding/Desktop/ionic2_tabs/node_modules",
+  "author": {
+    "name": "Jason Yang"
+  },
+  "bugs": {
+    "url": "https://github.com/NeoLSN/cordova-plugin-android-permission/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-android-permissions",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Android 6.0 permissions check.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "homepage": "https://github.com/NeoLSN/cordova-plugin-android-permission#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "BSD",
+  "name": "cordova-plugin-android-permissions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeoLSN/cordova-plugin-android-permission.git"
+  },
+  "version": "0.10.0"
+}

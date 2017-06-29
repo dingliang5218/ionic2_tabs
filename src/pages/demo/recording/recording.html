@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>录音</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      {{data.status==1?'录音':'录音中...'}}
+    </ion-card-header>
+    <ion-card-content text-center class="recording-card">
+      <div>{{data.timer}}</div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="md-reorder" color="{{data.status==1?'primary':'light'}}" (click)="recordingRecord()"></ion-icon>
+            <div class="font">录音记录</div>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="play" color="{{data.status==1?'primary':'light'}}" (click)="startRecord()"></ion-icon>
+            <div class="font">开始录音</div>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="power" color="{{data.status==1?'light':'primary'}}" (click)="stopRecord()"></ion-icon>
+            <div class="font">结束录音</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

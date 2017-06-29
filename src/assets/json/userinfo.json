@@ -1,0 +1,42 @@
+{
+  "code":200,
+  "message":"success",
+  "respCode":100200,
+  "data":[
+    {
+      "id": "1",
+      "username": "18658862110",
+      "name": "18658862110",
+      "nick": "海",
+      "email": "dingliang5218@163.com",
+      "phone": "18658862110",
+      "wechat": "dl18658862110",
+      "avatarId": "./assets/img/avatar.png",
+      "description": "丁亮-丁子航的爸爸",
+      "robotName":"小昊-1",
+      "token": "12345678-qazwsxed-09876543-plmoknij",
+      "totalDisk":"24G",
+      "unUsedDisk":"12G",
+      "masterRobot":[
+        {
+          "id":"001",
+          "name":"丁子航master1"
+        },
+        {
+          "id":"002",
+          "name":"丁子航master2"
+        }
+      ],
+      "slaveRobot":[
+        {
+          "id":"003",
+          "name":"丁子航slave1"
+        },
+        {
+          "id":"004",
+          "name":"丁子航slave2"
+        }
+      ]
+    }
+  ]
+}

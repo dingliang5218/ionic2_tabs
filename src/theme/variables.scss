@@ -1,0 +1,147 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+$font-path: "../assets/fonts";
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+$background-color:#f4f8fc;
+$list-background-color:#fff;
+$tabs-background:#fff;
+$toolbar-background:#fff;
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #478aff,
+  green:      #7bc251,
+  lightYellow:#ffba00,
+  darkYellow: #f28112,
+  vimeo:      #23b6ea,
+  facebook:   #3b5998,
+  titleColor: #3c3b3b,
+  lightBlack: #999999,
+  btnBlue:    #00a2f6,
+  textGrey:   #6d6d6d,
+  red:        #ff4c59,
+  white:      #ffffff,
+  lineGrey:   #c1c1c1,
+  success:    #009944,
+  lightBlue:  #51d8dd,
+  lightPurple:#b2a2ef,
+  lightGreen: #98fb98,
+  tintGreen:  #4ae0c2,
+  tintBlue:   #2ab4f0,
+  lightBrown: #ecae70,
+  lightRed:   #eb7185,
+  tintRed:    #f86d61,
+  itemLine:   #eee,
+  greyBlue:   #85b1df,
+);
+
+
+
+$default-grey:  color($colors, textGrey);
+$default-blue: color($colors, btnBlue);
+//$default-textGrey:  color($colors, textGrey);
+
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+$tabs-ios-tab-icon-size:36px;
+$tabs-ios-tab-icon-color:#bbb;
+$button-ios-background-color: $default-grey;
+$button-ios-background-color-activated: color-shade($button-ios-background-color);
+$toolbar-ios-title-font-weight: normal;
+$toolbar-ios-button-font-size: 1.6rem;
+$toolbar-ios-button-color: $default-grey;
+$tabs-ios-tab-icon-color-active: $default-blue;
+$tabs-ios-tab-text-color-active: $default-blue;
+$tabs-ios-border-color: color($colors, itemLine);
+$toolbar-ios-border-color: $tabs-ios-border-color;
+$item-ios-body-text-font-size: 1.5rem;
+$card-ios-header-font-size: 1.5rem;
+$alert-ios-title-font-size: 15px;
+$list-ios-border-color: #eee;
+$action-sheet-ios-button-text-color: #222;
+$card-ios-margin-right: 0px !default;
+$card-ios-margin-left: 0px !default;
+
+
+  // App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+$tabs-md-tab-icon-size:3rem;
+$tabs-md-tab-icon-color:#bbb;
+$button-md-background-color: $default-grey;
+$button-md-background-color-activated: color-shade($button-md-background-color);
+$toolbar-md-button-font-size: 1.6rem;
+$toolbar-md-title-text-align: center;
+$toolbar-md-button-color: $default-grey;
+$tabs-md-tab-icon-color-active: $default-grey;
+$tabs-md-tab-text-color-active: $default-blue;
+$tabs-md-border-color: color($colors, itemLine);
+$toolbar-md-border-color: $tabs-md-border-color;
+$alert-md-title-font-size: 15px;
+$list-md-border-color: #eee;
+$action-sheet-md-button-text-color: #222;
+$card-md-margin-right: 0px !default;
+$card-md-margin-left: 0px !default;
+
+/// @prop - Color of the input highlight when valid
+$text-input-highlight-color-valid:       none;
+
+/// @prop - Color of the input highlight
+$text-input-md-highlight-color:          none;
+
+
+// Change the color of the segment button text
+$toolbar-md-active-color:                 #fff;
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

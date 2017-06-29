@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      设置
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>
+    <ion-item>
+      机器人名称
+      <button ion-button item-right="" clear  icon-right  (tap)="setDeviceNick(rosterRoleUser)" color="red">
+        {{rosterRoleUser.deviceNick==''?'请设置机器人昵称':rosterRoleUser.deviceNick}}
+        <ion-icon name='create'></ion-icon>
+      </button>
+
+      <!--<ion-note item-rightrosterRoleUserUser.deviceNick==''?'请设置机器人rosterRoleUserUser.deviceNick}}</ion-note>-->
+    </ion-item>
+    <ion-item>
+      存储空间
+      <ion-note item-right="">
+        <p>可用空间：</p>
+        <p>总共空间：</p>
+      </ion-note>
+    </ion-item>
+    <!--<ion-item>-->
+      <!--在线状态-->
+      <!--<ion-note item-right="" *ngIf="robotStauts==1">-->
+        <!--上线-->
+      <!--</ion-note>-->
+      <!--<ion-note item-right="" *ngIf="robotStauts==0">-->
+        <!--下线-->
+      <!--</ion-note>-->
+    <!--</ion-item>-->
+
+
+    <ion-item-divider *ngIf="rosterRoleUser.ownerFlag==1">管理员</ion-item-divider>
+    <div *ngFor="let item of rosterListOfDevice">
+    <ion-item *ngIf="item.ownerFlag==1 && rosterRoleUser.ownerFlag==1">
+      <ion-avatar item-left="">
+        <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(item.avatar==''?DEFAULT_AVATAR:item.avatar)">
+      </ion-avatar>
+      <ion-note>{{item.userId}}</ion-note>
+    </ion-item>
+    </div>
+    <ion-item-divider *ngIf="rosterRoleUser.ownerFlag==1">
+      成员
+      <ion-icon name="add-circle" item-right="" color="red" (click)="addPerson()"></ion-icon>
+      <!--<img src="./assets/img/addMember.png" item-right=""  (tap)="addPerson()">-->
+    </ion-item-divider>
+    <div *ngFor="let item of rosterListOfDevice">
+    <ion-item class="mineBtnHeight" *ngIf="item.ownerFlag==0 && rosterRoleUser.ownerFlag==1">
+      <ion-avatar item-left="">
+        <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(item.avatar==''?DEFAULT_AVATAR:item.avatar)">
+      </ion-avatar>
+      <ion-note>{{item.userId}}</ion-note>
+      <ion-icon name='trash' item-right  (click)="removePerson(item)" color="light"></ion-icon>
+      <!--<img src="./assets/img/delMember.png" text-center="" (tap)="removePerson(item)" item-right="">-->
+    </ion-item>
+    </div>
+  </ion-item-group>
+
+  <!--<ion-item-group>-->
+    <!--<ion-item-divider color="light">我管理的机器人</ion-item-divider>-->
+    <!--<button ion-item *ngFor="let item of userInfo.masterRobot">-->
+      <!--<h2>{{item.name}}</h2>-->
+    <!--</button>-->
+  <!--</ion-item-group>-->
+
+  <!--<ion-item-group>-->
+    <!--<ion-item-divider color="light">我参与的机器人</ion-item-divider>-->
+    <!--<button ion-item *ngFor="let item of userInfo.slaveRobot">-->
+      <!--<h2>{{item.name}}</h2>-->
+    <!--</button>-->
+  <!--</ion-item-group>-->
+
+  <!--<ion-item-group>-->
+    <!--<ion-item-divider color="light">个人设置</ion-item-divider>-->
+    <!--<ion-item (click)="edit()">-->
+      <!--<ion-avatar item-left  disabled="true">-->
+        <!--<img [src]=avataro.avatarId">-->
+      <!--</ion-avatar>-->
+      <!--<h2>{{userInfo.username}}</h2>-->
+      <!--<p>{{userInfo.nick}}</p>-->
+      <!--<ion-icon name='ios-arrow-forward' item-right></ion-icon>-->
+    <!--</ion-item>-->
+  <!--</ion-item-group>-->
+
+  <!--<ion-list>-->
+    <!--<ion-item (click)="exitSoftware()" *ngIf="!isIos">-->
+	  <!--<ion-icon name="log-out" item-left color="danger"></ion-icon>-->
+      <!--退出软件-->
+    <!--</ion-item>-->
+    <!--<ion-item (click)="loginOut()">-->
+      <!--<ion-icon name="log-in" item-left color="danger"></ion-icon>-->
+      <!--重新登录-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
+
+  <!--<ion-list>-->
+    <!--<ion-item (click)="about()">-->
+      <!--<ion-icon name="information-circle" item-left  color="secondary"></ion-icon>-->
+      <!--关于-->
+      <!--<ion-icon name='ios-arrow-forward' item-right></ion-icon>-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
+</ion-content>

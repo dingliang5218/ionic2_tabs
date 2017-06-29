@@ -1,0 +1,18 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>录音记录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let fleEntry of fileList" (click)="play(fleEntry)">
+      <ion-icon name="musical-notes" item-left color="secondary"></ion-icon>
+      {{fleEntry.name}}
+    </ion-item>
+  </ion-list>
+</ion-content>

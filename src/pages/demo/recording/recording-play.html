@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>录音播放</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card-content text-center>
+    <div>{{fleEntry.name}}</div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="play" color="primary" (click)="play()"></ion-icon>
+          <div class="font">播放</div>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="pause" color="primary" (click)="stop()"></ion-icon>
+          <div class="font">停止</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-content>

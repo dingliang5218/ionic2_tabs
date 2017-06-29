@@ -1,0 +1,130 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>小昊机器人
+      <img *ngIf="robotStauts==1" src="./assets/img/online.png">
+      <img *ngIf="robotStauts==0" src="./assets/img/offline.png">
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (tap)="showFilter()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 offset-3>
+        <ion-avatar>
+          <img src="./assets/img/homeLogo.png" text-center="">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <br>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 offset-1>
+        <!--<ion-avatar>-->
+          <img src="./assets/img/homeVideo.png" text-center="" (tap)="openVideoSheet(2)">
+        <!--</ion-avatar>-->
+      </ion-col>
+      <ion-col col-4 offset-2>
+        <ion-avatar>
+          <img src="./assets/img/homeMes.png" text-center="" (tap)="openRecordSheet(2)">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <br>
+        <br>
+      </ion-col>
+    </ion-row>
+      <ion-row>
+        <ion-col col-4 offset-1>
+          <ion-avatar>
+            <img src="./assets/img/homeNotes.png" text-center="" (tap)="toChartPage(1)">
+          </ion-avatar>
+        </ion-col>
+        <ion-col col-4 offset-2>
+          <ion-avatar>
+            <img src="./assets/img/homeSettting.png" text-center="" (tap)="toConfigPage(2)">
+          </ion-avatar>
+        </ion-col>
+    </ion-row>
+
+    <!--<ion-row>-->
+      <!--<ion-col col-10>-->
+        <!--<ion-input type="text" value="丁亮" text-right="" background-color="#eee"></ion-input>-->
+      <!--</ion-col>-->
+      <!--<ion-col col-2>-->
+        <!--<button ion-button item-right="" small color="red">-->
+          <!--添加-->
+        <!--</button>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+  </ion-grid>
+
+
+    <!--<ion-list width="100%">-->
+      <!--<ion-item>-->
+        <!--<ion-label>Gaming</ion-label>-->
+        <!--<ion-select [(ngModel)]="gaming">-->
+          <!--<ion-option value="nes">NES</ion-option>-->
+          <!--<ion-option value="n64">Nintendo64</ion-option>-->
+          <!--<ion-option value="ps">PlayStation</ion-option>-->
+          <!--<ion-option value="genesis">Sega Genesis</ion-option>-->
+          <!--<ion-option value="saturn">Sega Saturn</ion-option>-->
+          <!--<ion-option value="snes">SNES</ion-option>-->
+        <!--</ion-select>-->
+      <!--</ion-item>-->
+      <!--<ion-item>-->
+        <!--<ion-input type="text"  text-right="" placeholder="请输入成员手机号码"></ion-input>-->
+        <!--<button ion-button item-right=""  color="red" (tap)="editDeviceName()">-->
+          <!--添加成员-->
+        <!--</button>-->
+      <!--</ion-item>-->
+    <!--</ion-list>-->
+
+  <!--<ion-list width="100%">-->
+    <!--<ion-item>-->
+      <!--<ion-input type="text" text-right="" placeholder="请输入机器人昵称">11111</ion-input>-->
+      <!--<button ion-button item-right="" large color="red" >-->
+        <!--添加-->
+      <!--</button>-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
+
+  <!--<ion-item-group>-->
+    <!--<ion-item>-->
+      <!--机器人名称-->
+      <!--<button ion-button item-right="" clear  large icon-right>-->
+          <!--小白-->
+        <!--<ion-icon name='create'></ion-icon>-->
+      <!--</button>-->
+    <!--</ion-item>-->
+  <!--</ion-item-group>-->
+
+  <!--<ion-card (hold)="startRecord($event)" (release)="stopRecord($event)" (swipeup)="cancelRecord($event)">-->
+    <!--1111-->
+  <!--</ion-card>-->
+
+  <!--<button ion-button  color="light" (hold)="startRecord($event)" (release)="stopRecord($event)" (swipeup)="cancelRecord($event)"  full>-->
+    <!--<ion-icon name="microphone"></ion-icon>-->
+    <!--&nbsp;&nbsp;&nbsp;长按发送语音-->
+  <!--</button>-->
+</ion-content>
+
+<ion-footer *ngIf="showFlag">
+  <ion-card (press)="startRecord($event)"  (pinch)="cancelRecord($event)" (touchend)="stopRecord($event)">
+    <ion-item>
+      <ion-icon name="microphone" item-left=""></ion-icon>
+      &nbsp;&nbsp;&nbsp;长按发送语音&nbsp;&nbsp;&nbsp;向上滑动取消发送
+    </ion-item>
+  </ion-card>
+</ion-footer>

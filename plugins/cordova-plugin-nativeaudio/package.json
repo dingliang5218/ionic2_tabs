@@ -1,0 +1,114 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-nativeaudio",
+        "scope": null,
+        "escapedName": "cordova-plugin-nativeaudio",
+        "name": "cordova-plugin-nativeaudio",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/lding/Desktop/ionic2_tabs/node_modules"
+    ]
+  ],
+  "_cnpm_publish_time": 1488679655173,
+  "_from": "cordova-plugin-nativeaudio",
+  "_hasShrinkwrap": false,
+  "_id": "cordova-plugin-nativeaudio@3.0.9",
+  "_location": "/cordova-plugin-nativeaudio",
+  "_nodeVersion": "4.7.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-nativeaudio-3.0.9.tgz_1488679654900_0.8962833816185594"
+  },
+  "_npmUser": {
+    "name": "floatinghotpot",
+    "email": "rjfun.mobile@gmail.com"
+  },
+  "_npmVersion": "2.15.11",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-nativeaudio",
+    "scope": null,
+    "escapedName": "cordova-plugin-nativeaudio",
+    "name": "cordova-plugin-nativeaudio",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/cordova-plugin-nativeaudio/download/cordova-plugin-nativeaudio-3.0.9.tgz",
+  "_shasum": "16cebfdaee24beb23c05f49713cb8773bc78536c",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-nativeaudio",
+  "_where": "/Users/lding/Desktop/ionic2_tabs/node_modules",
+  "author": {
+    "name": "Andrew Trice"
+  },
+  "bugs": {
+    "url": "https://github.com/floatinghotpot/cordova-plugin-nativeaudio/issues"
+  },
+  "contributors": [
+    {
+      "name": "Andrew Trice"
+    },
+    {
+      "name": "Raymond Xie",
+      "email": "rjfun.mobile@gmail.com"
+    },
+    {
+      "name": "Sidney Bofah"
+    }
+  ],
+  "cordova": {
+    "id": "cordova-plugin-nativeaudio",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova/PhoneGap Plugin for low latency Native Audio Playback, must have for HTML5 games",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "16cebfdaee24beb23c05f49713cb8773bc78536c",
+    "size": 2031963,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/cordova-plugin-nativeaudio/download/cordova-plugin-nativeaudio-3.0.9.tgz"
+  },
+  "gitHead": "6c173892da095d7ec21e158b6209d07fab6fcf0c",
+  "homepage": "https://github.com/floatinghotpot/cordova-plugin-nativeaudio#readme",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "music",
+    "audio",
+    "game",
+    "mp3",
+    "rjfun"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "floatinghotpot",
+      "email": "rjfun.mobile@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-nativeaudio",
+  "optionalDependencies": {},
+  "publish_time": 1488679655173,
+  "readme": "#Cordova Native Audio Plugin\n\nCordova / PhoneGap 3.5+ extension for Native Audio playback, aimed at HTML5 gaming and audio applications which require minimum latency, polyphony and concurrency.\n\n## Contents\n\n1. [Description](#description)\n2. [History](#history)\n3. [Roadmap](#roadmap)\n5. [Integration](#integration)\n7. [Supported Platforms](#supported-platforms)\n8. [Installation](#installation)\n9. [Usage](#usage)\n10. [API](#api)\n11. [Demo](#demo)\n\n## Description\n\nThis Cordova / PhoneGap (3.5+) plugin enables concurrency (multi-channel playback), polyphony (multi-voice playback) and minimized latency (via caching) in audio-based applications, by leveraging native audio APIs. Designed for the use in HTML5-based cross-platform games and mobile/hybrid audio applications.\n\n## History\n\nCommunity-driven, clean fork of the Low Latency Audio Plugin for Cordova / PhoneGap, initially published by [Andrew Trice](http://www.tricedesigns.com/2012/01/25/low-latency-polyphonic-audio-in-phonegap/) and then maintained by [Raymond Xie](http://github.com/floatinghotpot/) and [Sidney Bofah](https://github.com/SidneyS/).\n\nThis project cleans up a lot of legacy code, and adds success, error and completion callbacks. It also features integration in AngularJS projects via [ngCordova](http://www.ngcordova.com).\n\n## Roadmap\n\nFollowing the Cordova philosophy, this is a shim for a web audio implementation (on mobile) which is as fast and feature-rich as native mobile APIs. Currently, neither HTML5 Audio or the more recent Web Audio API offer a cross-platform solution which 1) is fast, 2) supports polyphony, 3) concurrency and 4) maintains a low overhead.\n\nIt should be replaced by a standardised W3C solution as soon as such an implementation offers comparable performance across (mobile) devices, which is crucial for HTML5-based games.\n\n## Integration\n\nThis plugin is available as an AngularJS service module, facilitating the usage in AngularJS-based Cordova/PhoneGap projects.\n\nIt extends the ngCordova project, an effort by the great guys at [Drifty](http://github.com/driftyco), creators of the Ionic Framework.\nDownload it at the ngCordova [website](http://www.ngcordova.com) or the [repository](http://www.github.com/driftyco/ng-cordova).\n\n## Supported Platforms\n\n* iOS (tested with 7.1.2, 8.1.3)\n* Android (tested in API levels 14 - 21)\n\n## Installation\n\nVia Cordova CLI:\n```bash\ncordova plugin add cordova-plugin-nativeaudio\n```\n\n##Usage\n\n\n1. Wait for `deviceReady`.\n1. Preload an audio asset and assign an id - either optimized for single-shot style short clips (`preloadSimple()`) or looping, ambient background audio (`preloadComplex()`)\n2. `play()` the audio asset via its id.\n3. `unload()` the audio asset via its id.\n\n##API\n\n###Preloading\n\n```javascript\npreloadSimple: function ( id, assetPath, successCallback, errorCallback)\n```\nLoads an audio file into memory. Optimized for short clips / single shots (up to five seconds).\nCannot be stopped / looped.\n\nUses lower-level native APIs with small footprint (iOS: AudioToolbox/AudioServices).\nFully concurrent and multichannel.\n\n* params\n * id - string unique ID for the audio file\n * assetPath - the relative path or absolute URL (inluding http://) to the audio asset.\n * successCallback - success callback function\n * errorCallback - error callback function\n\n\n```javascript\npreloadComplex: function ( id, assetPath, volume, voices, delay, successCallback, errorCallback)\n```\n\nLoads an audio file into memory. Optimized for background music / ambient sound.\nUses highlevel native APIs with a larger footprint. (iOS: AVAudioPlayer).\nCan be stopped / looped and used with multiple voices. Can be faded in and out using the delay parameter.\n\n\n####Volume & Voices\n\nThe default **volume** is 1.0, a lower default can be set by using a numerical value from 0.1 to 1.0.\n\nBy default, there is 1 **vice**, that is: one instance that will be stopped & restarted on play().\nIf there are multiple voices (number greater than 0), it will cycle through voices to play overlapping audio.\n\nChange the float-based **delay** parameter to increase the fade-in/fade-out timing.\n\n###Playback\n\n* params\n * id - string unique ID for the audio file\n * assetPath - the relative path to the audio asset within the www directory\n * volume - the volume of the preloaded sound (0.1 to 1.0)\n * voices - the number of multichannel voices available\n * successCallback - success callback function\n * errorCallback - error callback function\n\n```javascript\nplay: function (id, successCallback, errorCallback, completeCallback)\n```\n\nPlays an audio asset.\n\n* params:\n * id - string unique ID for the audio file\n * successCallback - success callback function\n * errorCallback - error callback function\n * completeCallback - error callback function\n\n```javascript\nloop: function (id, successCallback, errorCallback)\n```\nLoops an audio asset infinitely - this only works for assets loaded via preloadComplex.\n\n* params\n * ID - string unique ID for the audio file\n * successCallback - success callback function\n * errorCallback - error callback function\n\n```javascript\nstop: function (id, successCallback, errorCallback)\n```\n\nStops an audio file. Only works for assets loaded via preloadComplex.\n\n* params:\n * ID - string unique ID for the audio file\n * successCallback - success callback function\n * errorCallback - error callback function\n\n```javascript\nunload: function (id, successCallback, errorCallback)\n```\n\nUnloads an audio file from memory.\n\n\n* params:\n * ID - string unique ID for the audio file\n * successCallback - success callback function\n * errorCallback - error callback function\n\n```javascript\nsetVolumeForComplexAsset: function (id, volume, successCallback, errorCallback)\n```\n\nChanges the volume for preloaded complex assets.\n \n \n* params:\n * ID - string unique ID for the audio file\n * volume - the volume of the audio asset (0.1 to 1.0)\n * successCallback - success callback function\n * errorCallback - error callback function\n\n## Example Code\n\nIn this example, the resources reside in a relative path under the Cordova root folder \"www/\".\n\n```javascript\nif( window.plugins && window.plugins.NativeAudio ) {\n\t\n\t// Preload audio resources\n\twindow.plugins.NativeAudio.preloadComplex( 'music', 'audio/music.mp3', 1, 1, 0, function(msg){\n\t}, function(msg){\n\t\tconsole.log( 'error: ' + msg );\n\t});\n\t\n\twindow.plugins.NativeAudio.preloadSimple( 'click', 'audio/click.mp3', function(msg){\n\t}, function(msg){\n\t\tconsole.log( 'error: ' + msg );\n\t});\n\n\n\t// Play\n\twindow.plugins.NativeAudio.play( 'click' );\n\twindow.plugins.NativeAudio.loop( 'music' );\n\n\n\t// Stop multichannel clip after 60 seconds\n\twindow.setTimeout( function(){\n\n\t\twindow.plugins.NativeAudio.stop( 'music' );\n\t\t\t\n\t\twindow.plugins.NativeAudio.unload( 'music' );\n\t\twindow.plugins.NativeAudio.unload( 'click' );\n\n\t}, 1000 * 60 );\n}\n```\n\n## Demo\n\nThe **Drumpad** in the examples directory is a first starting point.\n\n```bash\n[sudo] npm install plugin-verify -g\nplugin-verify cordova-plugin-nativeaudio ios\nplugin-verify cordova-plugin-nativeaudio android\n```\n\nOr, type the commands step by step:\n\n```bash\ncordova create drumpad com.example.nativeaudio drumpad\ncd drumpad\ncordova platform add ios\ncordova plugin add cordova-plugin-nativeaudio\nrm -r www/*\ncp -r plugins/cordova-plugin-nativeaudio/test/* www\ncordova build ios\ncordova emulate ios\n```\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floatinghotpot/cordova-plugin-nativeaudio.git"
+  },
+  "scripts": {},
+  "version": "3.0.9"
+}

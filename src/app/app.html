@@ -1,0 +1,69 @@
+<ion-menu id="filterMenu" #filterMenu [content]="nav" side="left" type="push" enabled="true" (ionOpen)="freshData()">
+  <ion-content >
+    <ion-grid>
+      <ion-row>
+        <ion-col col-5 color="light" center="">
+          <!--<ion-item>-->
+          <ion-avatar item-left="">
+            <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(avatarBase64)" class="user-img">
+          </ion-avatar>
+          <!--</ion-item>-->
+          <!--<ion-note>{{userInfo.username}}</ion-note>-->
+        </ion-col>
+        <ion-col col-2 offset-4="" center="">
+          <ion-avatar item-left="">
+            <img src="./assets/img/scan.png" (tap)="scanBarcode()">
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--<ion-list class="bkground-color">-->
+      <!--<ion-item>-->
+          <!--<ion-avatar item-left="">-->
+            <!--<img [src]="_DomSanitizationService.bypassSecurityTrustUrl(avatarBase64)">-->
+          <!--</ion-avatar>-->
+          <!--<img src="./assets/img/barcode3.png"  item-right (tap)="scanBarcode()">-->
+      <!--</ion-item>-->
+    <!--</ion-list>-->
+
+    <ion-item-group>
+      <ion-item-divider color="light">我管理的机器人</ion-item-divider>
+      <div *ngFor="let item of roleUser">
+        <button ion-item *ngIf="item.ownerFlag==1" (tap)="goSelectedRobot(item)">
+          <h2>{{item.deviceNick}}</h2>
+        </button>
+      </div>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light">我参与的机器人</ion-item-divider>
+      <div *ngFor="let item of roleUser" >
+        <button ion-item *ngIf="item.ownerFlag==0" (tap)="goSelectedRobot(item)">
+          <h2>{{item.deviceNick}}</h2>
+        </button>
+      </div>
+    </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider color="light"></ion-item-divider>
+        <button ion-item (tap)="edit()">
+          个人信息
+        </button>
+        <button ion-item (tap)="about()">
+          关于我们
+        </button>
+        <button ion-item (tap)="features()">
+          使用帮助
+        </button>
+      </ion-item-group>
+
+      <ion-item-group>
+        <ion-item-divider color="light"></ion-item-divider>
+        <button ion-item color="red" (tap)="loginOut()">
+          退出登录
+        </button>
+      </ion-item-group>
+
+  </ion-content>
+</ion-menu>
+
+<ion-nav #myNav [root]="rootPage" swipeBackEnabled="false"></ion-nav>

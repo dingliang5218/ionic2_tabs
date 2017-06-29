@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      设置个人头像
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (click)="dismiss()">关闭</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding text-center>
+  <img [src]="_DomSanitizationService.bypassSecurityTrustUrl(avatarPath)" width="100%">
+    <button ion-button large block round color="red" (click)="getPicture(0)">从相册选一张</button>
+    <button ion-button large block round color="red" (click)="getPicture(1)">拍一张照片</button>
+    <button ion-button large block round color="red" (click)="saveAvatar()">保 存</button>
+</ion-content>

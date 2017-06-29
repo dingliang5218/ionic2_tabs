@@ -1,0 +1,56 @@
+{
+  "_from": "android-camera-permission",
+  "_id": "android-camera-permission@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-gO6fW75Ee0k4+2DKVVQlB+z9mmQ=",
+  "_location": "/android-camera-permission",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "android-camera-permission",
+    "name": "android-camera-permission",
+    "escapedName": "android-camera-permission",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/android-camera-permission/download/android-camera-permission-1.0.0.tgz",
+  "_shasum": "80ee9f5bbe447b4938fb60ca55542507ecfd9a64",
+  "_spec": "android-camera-permission",
+  "_where": "/Users/lding/Desktop/ionic2_tabs/node_modules",
+  "author": {
+    "name": "Daniel Campagnoli"
+  },
+  "bugs": {
+    "url": "https://github.com/campers/android-camera-permission/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "android-camera-permission",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Android Camera Permission Plugin",
+  "homepage": "https://github.com/campers/android-camera-permission#readme",
+  "keywords": [
+    "cordova",
+    "media",
+    "android",
+    "camera",
+    "permission"
+  ],
+  "license": "Apache 2.0",
+  "name": "android-camera-permission",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/campers/android-camera-permission.git"
+  },
+  "version": "1.0.0"
+}

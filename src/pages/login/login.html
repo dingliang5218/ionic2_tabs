@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>登录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label icon-only="" left="" >
+          <ion-icon name="person"></ion-icon>
+        </ion-label>
+        <ion-input type="tel" placeholder="请输入手机号" formControlName="username"></ion-input>
+      </ion-item>
+      <span padding-left *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.touched"
+        color="red">
+          请输入正确手机号
+      </span>
+      <ion-item>
+        <ion-label icon-only="" left="">
+          <ion-icon name="lock"></ion-icon>
+        </ion-label>
+        <ion-input type="password" placeholder="请输入密码" formControlName="password"></ion-input>
+      </ion-item>
+      <span padding-left *ngIf="!loginForm.controls.password.valid" color="red">请输入密码</span>
+    </ion-list>
+    <button ion-button large block type="submit" class="loginBtn" round color="red">登 录</button>
+  </form>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center (click)="toFindPassword()">
+        <button ion-button small clear>找回密码</button>
+      </ion-col>
+      <ion-col text-center (click)="toRegister()">
+        <button ion-button small clear>注　册</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

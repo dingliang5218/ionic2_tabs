@@ -1,0 +1,94 @@
+<!--<ion-header>-->
+<!--<ion-navbar color="{{callService.isInCall ? 'primary' : 'danger'}}">-->
+<!--<ion-title>-->
+<!--<span *ngIf="callService.isAnswering">Incoming Call from <b>{{callService.contact.name || callService.contact.username}}</b></span>-->
+<!--<span *ngIf="callService.isCalling">Calling <b>{{callService.contact.name || callService.contact.username}}</b></span>-->
+<!--<span *ngIf="callService.isInCall"><b>{{callService.contact.name || callService.contact.username}}</b></span>-->
+<!--&lt;!&ndash;<span *ngIf="callService.isAnswering">Incoming Call from <b>{{callService.contact.name || callService.contact.username}}</b></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span *ngIf="callService.isCalling">Calling <b>{{callService.contact.name || callService.contact.username}}</b></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span *ngIf="callService.isInCall"><b>{{callService.contact.name || callService.contact.username}}</b></span>&ndash;&gt;-->
+<!--</ion-title>-->
+<!--</ion-navbar>-->
+<!--</ion-header>-->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      视频通话
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (tap)="end()" *ngIf="status!='speaking'">
+        关闭
+      </button>
+      <button ion-button (tap)="end()" *ngIf="status=='speaking'" color='red'>
+          <ion-icon name="call">&nbsp;挂断</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color:#000000;color:#ffffff;opacity: 0.96 !important">
+<!--<ion-content>-->
+  <div id="videos" *ngIf="status=='speaking'">
+  <!--<div id="videos">-->
+    <video id="miniVideo" autoplay="autoplay"  muted></video>
+    <video id="remoteVideo" autoplay="autoplay"></video>
+    <!--<video id="localVideo" autoplay="true"  muted [ngClass]="{preview:true}"></video>-->
+    <!--<video id="localVideo" autoplay="autoplay"  muted></video>-->
+
+  </div>
+  <audio src="./assets/audio/ringcall.mp3" controls="controls" preload id="ring" loop hidden></audio>
+
+  <ion-grid >
+    <ion-row *ngIf="(status=='calling'|| status=='initing' ||status =='reject' || status=='cancel' || status=='close')">
+      <ion-col>
+        <br>
+        <br>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="(status=='calling'|| status=='initing'||status =='reject' || status=='cancel' || status=='close')">
+      <ion-col text-center="">
+        <h3>{{title}}</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="(status=='calling'|| status=='initing' ||status =='reject' || status=='cancel' || status=='close')">
+      <ion-col>
+        <br>
+        <br>
+        <br>
+      </ion-col>
+    </ion-row>
+    <ion-row
+      *ngIf="(status=='calling'|| status=='initing' ||status =='reject' || status == 'cancel' || status=='close')">
+      <ion-col col-6 offset-3>
+          <ion-avatar>
+            <img src="./assets/img/homeLogo.png" text-center="" class="call-img">
+          </ion-avatar>
+      </ion-col>
+    </ion-row>
+    <!--<ion-row *ngIf="status=='speaking'">-->
+      <!--<ion-col>-->
+        <!--<div id="videos" *ngIf="status=='speaking'">-->
+          <!--<video id="remoteVideo" autoplay="true"></video>-->
+          <!--&lt;!&ndash;<video id="localVideo" autoplay="true"  muted [ngClass]="{preview:true}"></video>&ndash;&gt;-->
+          <!--<video id="localVideo" autoplay="true"  muted></video>-->
+        <!--</div>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+      <ion-row *ngIf="(status=='calling'|| status=='initing' || status=='close')">
+        <ion-col>
+          <br>
+          <br>
+          <br>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="(status=='calling'|| status=='initing' || status=='close') ">
+        <ion-col text-center="">
+          <button ion-button="" color="red" (tap)="end()">
+            <ion-icon name="call">挂断</ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+</ion-content>
