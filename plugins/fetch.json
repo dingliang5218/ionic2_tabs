@@ -42,7 +42,7 @@
     "cordova-plugin-splashscreen": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-splashscreen@~4.0.1"
+            "id": "cordova-plugin-splashscreen@^4.0.3"
         },
         "is_top_level": true,
         "variables": {}
@@ -50,7 +50,7 @@
     "cordova-plugin-statusbar": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-statusbar@2.2.1"
+            "id": "cordova-plugin-statusbar@^2.2.1"
         },
         "is_top_level": true,
         "variables": {}
@@ -66,7 +66,7 @@
     "cordova-plugin-app-version": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-app-version"
+            "id": "cordova-plugin-app-version@~0.1.9"
         },
         "is_top_level": true,
         "variables": {}
@@ -85,7 +85,9 @@
             "id": "cordova-plugin-media@~2.4.1"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "MICROPHONE_USAGE_DESCRIPTION": " "
+        }
     },
     "cordova-plugin-x-toast": {
         "source": {
@@ -125,7 +127,9 @@
             "id": "cordova-plugin-image-picker"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "PHOTO_LIBRARY_USAGE_DESCRIPTION": " "
+        }
     },
     "install": {
         "source": {
@@ -142,15 +146,20 @@
             "id": "cordova-plugin-camera@~2.4.0"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
+        }
     },
     "phonegap-plugin-barcodescanner": {
         "source": {
             "type": "registry",
-            "id": "phonegap-plugin-barcodescanner"
+            "id": "phonegap-plugin-barcodescanner@~6.0.6"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "CAMERA_USAGE_DESCRIPTION": " "
+        }
     },
     "cordova-sqlite-storage": {
         "source": {
@@ -180,30 +189,6 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-nativeaudio"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-screen-orientation": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-screen-orientation"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "es6-promise-plugin": {
-        "source": {
-            "type": "registry",
-            "id": "https://github.com/vstirbu/PromisesPlugin.git"
-        },
-        "is_top_level": false,
-        "variables": {}
-    },
-    "cordova-plugin-crosswalk-webview": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-crosswalk-webview@^2.3.0"
         },
         "is_top_level": true,
         "variables": {}

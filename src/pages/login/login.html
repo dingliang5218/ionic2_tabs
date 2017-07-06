@@ -16,7 +16,7 @@
         <ion-input type="tel" placeholder="请输入手机号" formControlName="username"></ion-input>
       </ion-item>
       <span padding-left *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.touched"
-        color="red">
+            style="color:red">
           请输入正确手机号
       </span>
       <ion-item>
@@ -25,7 +25,7 @@
         </ion-label>
         <ion-input type="password" placeholder="请输入密码" formControlName="password"></ion-input>
       </ion-item>
-      <span padding-left *ngIf="!loginForm.controls.password.valid" color="red">请输入密码</span>
+      <span padding-left *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched" style="color:red">请输入密码</span>
     </ion-list>
     <button ion-button large block type="submit" class="loginBtn" round color="red">登 录</button>
   </form>

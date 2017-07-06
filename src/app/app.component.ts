@@ -16,7 +16,7 @@ import {Utils} from "../providers/Utils";
 import {DomSanitizer} from "@angular/platform-browser";
 import {resolve} from "url";
 import {RobotMQTT} from "../providers/robot-mqtt";
-import {ScreenOrientation} from "@ionic-native/screen-orientation";
+// import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import 'webrtc-adapter/out/adapter.js';
 
 declare var AppMinimize;
@@ -66,16 +66,16 @@ export class MyApp {
               private http:BusHttpAPI,
               private _DomSanitizationService:DomSanitizer,
               private mqtt:RobotMQTT,
-              private events: Events,
-              private screeOrientation:ScreenOrientation
+              private events: Events
+              // private screeOrientation:ScreenOrientation
               ) {
 
     platform.ready().then(() => {
 
       statusBar.styleDefault();
       splashScreen.hide();
-      if (this.nativeService.isMobile())
-        this.screeOrientation.lock(this.screeOrientation.ORIENTATIONS.PORTRAIT);
+      // if (this.nativeService.isMobile())
+      //   this.screeOrientation.lock(this.screeOrientation.ORIENTATIONS.PORTRAIT);
       this.registerBackButtonAction();//注册返回按键事件
       this.assertNetwork();//检测网络
       this.registerAuth(); //鉴权
@@ -193,7 +193,7 @@ export class MyApp {
         console.log('Barcode Format ->' + barcodeData.format);
         console.log('Cancelled -> ' + barcodeData.cancelled);
 
-        if (barcodeData.cancelled == 0||barcodeData.cancelled == false) {
+        if (barcodeData.cancelled == false) {
 
           var param = {
             'deviceId': 'robot1719000001',

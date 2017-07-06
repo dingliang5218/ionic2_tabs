@@ -39,7 +39,12 @@ import {RobotMqttHandler} from "../providers/robot-mqtt-handler";
 import {VideoService} from "../providers/video";
 import {AudioService} from "../providers/audio";
 import {NativeAudio} from "@ionic-native/native-audio";
-import {ScreenOrientation} from "@ionic-native/screen-orientation";
+// import {ScreenOrientation} from "@ionic-native/screen-orientation";
+import { BrowserModule }from
+  '@angular/platform-browser';
+
+import { HttpModule }from
+  '@angular/http';
 
 export function httpFactory(backend: XHRBackend, defaultOptions: RequestOptions, httpInterceptHandle: HttpInterceptHandle) {
   return new HttpIntercept(backend, defaultOptions, httpInterceptHandle);
@@ -48,6 +53,8 @@ export function httpFactory(backend: XHRBackend, defaultOptions: RequestOptions,
 @NgModule({
   declarations: [MyApp],
   imports: [
+    HttpModule,
+    BrowserModule,
     IonicModule.forRoot(MyApp, {
       mode: 'ios',//android是'md'
       backButtonText: ''
@@ -81,7 +88,7 @@ export function httpFactory(backend: XHRBackend, defaultOptions: RequestOptions,
     SplashScreen,
     AppVersion,
     Camera,
-    ScreenOrientation,
+    // ScreenOrientation,
     NativeAudio,
     Toast,
     File,

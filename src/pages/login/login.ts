@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalController, ViewController, Platform, AlertController} from 'ionic-angular';
+import {ModalController, ViewController, NavController} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {FormBuilder} from '@angular/forms';
 import {Validators} from '../../providers/Validators'
@@ -9,12 +9,10 @@ import {LoginService} from './LoginService';
 import {FindPasswordPage} from './find-password/find-password';
 import {RegisterPage} from './register/register';
 import {UserInfo} from "../../model/UserInfo";
-import {NativeService} from "../../providers/NativeService";
 import {BusHttpAPI} from "../../providers/BusHttpAPI";
 import {Utils} from "../../providers/Utils";
 import {AppConfig} from "../../app/app.config";
 import {RobotMQTT} from "../../providers/robot-mqtt";
-import {Helper} from "../../providers/Helper";
 
 
 @Component({
@@ -28,6 +26,7 @@ export class LoginPage {
   canLeave: boolean = false;
   loginForm: any =null;
   mobile:any;
+
   constructor(private viewCtrl: ViewController,
               private formBuilder: FormBuilder,
               private storage: Storage,

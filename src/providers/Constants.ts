@@ -41,6 +41,8 @@ export const EVENTS_USER_WEBRTC_OFFER='offer';
 export const EVENTS_USER_WEBRTC_ANSWER='answer';
 export const EVENTS_USER_WEBRTC_CANDIDATE='candidate';
 
+export const AVATAR_PHOTO_SIZE_LIMIT=2;//头像默认限制大小2M
+
 
 export const APP_DOWNLOAD = 'http://106.14.238.69:8089/366/download.html';//app下载地址
 

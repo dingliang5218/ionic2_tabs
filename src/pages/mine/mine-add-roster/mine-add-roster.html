@@ -24,12 +24,12 @@
         <ion-option value='2'>控制</ion-option>
       </ion-select>
     </ion-item>
-    <span padding-left *ngIf="!roserForm.controls.authFlag.valid" color="red">请选择添加成员设备权限</span>
+    <span padding-left *ngIf="!roserForm.controls.authFlag.valid" style="color:red">请选择添加成员设备权限</span>
     <ion-item>
       <ion-input type="text" formControlName="mobile" text-right="" placeholder="请输入成员手机号码"></ion-input>
     </ion-item>
     <span padding-left *ngIf="!roserForm.controls.mobile.valid && roserForm.controls.mobile.touched"
-          color="red">
+          style="color:red">
           请输入正确手机号
       </span>
   </ion-list>

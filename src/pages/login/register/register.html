@@ -19,7 +19,7 @@
         <ion-input type="tel" placeholder="请输入手机号" formControlName="username"></ion-input>
       </ion-item>
       <span padding-left *ngIf="!registerForm.controls.username.valid && registerForm.controls.username.touched"
-            color="red">
+            style="color:red">
           请输入正确手机号
         </span>
       <ion-item class="checkNumber">
@@ -33,7 +33,7 @@
       </ion-item>
       <span padding-left
             *ngIf="!registerForm.controls.verificationCode.valid&& registerForm.controls.verificationCode.touched"
-            color="red">请输入验证码</span>
+            style="color:red">请输入验证码</span>
     <ion-item>
     <ion-label icon-only="" left="">
       <ion-icon name="lock"></ion-icon>
@@ -42,7 +42,7 @@
     </ion-item>
 
     <span padding-left *ngIf="!registerForm.controls.password.valid && registerForm.controls.password.touched"
-    color="red">请输入至少6位长度密码</span>
+          style="color:red">请输入至少6位长度密码</span>
     </ion-list>
       <button ion-button block type="submit" class="registerBtn" [disabled]="!registerForm.valid"  round color="red">注 册</button>
   </form>
