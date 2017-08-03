@@ -8,7 +8,6 @@ import {Utils} from "../../../providers/Utils";
 import {NativeService} from "../../../providers/NativeService";
 import {Storage} from "@ionic/storage";
 import { ViewController} from 'ionic-angular';
-import {Helper} from "../../../providers/Helper";
 
 @Component({
   selector: 'page-register',
@@ -38,7 +37,6 @@ export class RegisterPage {
 
     console.log(mobile);
     var reg1 = /^[1][34578]\d{9}$/;
-    var params = { "phone": mobile.username };
 
     if (!mobile.username) {
 

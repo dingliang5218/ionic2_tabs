@@ -2,7 +2,6 @@
 
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { Events } from 'ionic-angular';
 
 declare var navigator:any;
 

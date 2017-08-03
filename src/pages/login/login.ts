@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalController, ViewController, NavController} from 'ionic-angular';
+import {ModalController, ViewController} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {FormBuilder} from '@angular/forms';
 import {Validators} from '../../providers/Validators'

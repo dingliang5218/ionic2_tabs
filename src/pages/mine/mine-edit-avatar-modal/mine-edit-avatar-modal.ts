@@ -55,6 +55,7 @@ export class MineEditAvatarModalPage {
     }
     let length = base64.length;
     let fileLength = ((length-length/8*2)/1024)/1024;
+    this.nativeService.showToast('文件大小：'+fileLength);
     if(fileLength>AVATAR_PHOTO_SIZE_LIMIT){
       this.nativeService.showToast('请上传2M以下的图片!')
       return false;

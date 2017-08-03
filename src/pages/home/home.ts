@@ -5,13 +5,13 @@ import {NativeService} from "../../providers/NativeService";
 import {MinePage} from "../mine/mine";
 import {ChatPage} from "../chat/chat";
 import { MediaPlugin, MediaObject } from '@ionic-native/media';
-import {Utils} from "../../providers/Utils";
+// import {Utils} from "../../providers/Utils";
 import {clearTimeout} from "timers";
 
 
 import Timer = NodeJS.Timer;
 import {Storage} from "@ionic/storage";
-import {RobotMQTT} from "../../providers/robot-mqtt";
+// import {RobotMQTT} from "../../providers/robot-mqtt";
 import {EVENTS_ROBOT_SELECTED, EVENTS_ROBOT_STATUS, EVENTS_ROBOT_STATUS2} from "../../providers/Constants";
 import {CallModalPage} from "../chat/call-modal/call-modal";
 import {VideoService} from "../../providers/video";
@@ -58,7 +58,7 @@ export class HomePage {
               private media: MediaPlugin,
               public menuCtrl:MenuController,
               private storage: Storage,
-              private mqtt :RobotMQTT,
+              // private mqtt :RobotMQTT,
               public events :Events,
               public actionSheetCtrl: ActionSheetController,
               public platform: Platform,
@@ -90,7 +90,7 @@ export class HomePage {
       this.showFlag = false;
       this.navCtrl.push(MinePage);
     }
-    });
+    }).catch(()=>{});
   }
 
   toChartPage(authFlag){
@@ -99,27 +99,27 @@ export class HomePage {
         this.showFlag = false;
         this.navCtrl.push(ChatPage);
       }
-    });
+    }).catch(()=>{});
 
     // this.navCtrl.push(ChatPage);
   }
 
-  private getFilePath() {//获得音频文件保存目录
-    return new Promise((resolve) => {
-
-        let directory ='';
-      if(this.nativeService.isIos()){
-        directory=cordova.file.tempDirectory;
-      }else if(this.nativeService.isAndroid()){
-        directory=cordova.file.externalRootDirectory;
-      }
-      // cordova.file.externalRootDirectory;
-      const username = 'username';
-      const dirName = 'recording_' + username;
-      const fileName = username + '_' +Utils.dateFormat(new Date(), 'yyyyMMddhhmmss');
-    });
-
-  }
+  // private getFilePath() {//获得音频文件保存目录
+  //   return new Promise((resolve) => {
+  //
+  //       let directory ='';
+  //     if(this.nativeService.isIos()){
+  //       directory=cordova.file.tempDirectory;
+  //     }else if(this.nativeService.isAndroid()){
+  //       directory=cordova.file.externalRootDirectory;
+  //     }
+  //     // cordova.file.externalRootDirectory;
+  //     const username = 'username';
+  //     const dirName = 'recording_' + username;
+  //     const fileName = username + '_' +Utils.dateFormat(new Date(), 'yyyyMMddhhmmss');
+  //   });
+  //
+  // }
 
   playRecord(){
     if(this.data.status==1&&this.fileMedia) {
@@ -273,7 +273,7 @@ export class HomePage {
         });
         actionSheet.present();
       }
-    });
+    }).catch(()=>{});
   }
 
   showFilter(){

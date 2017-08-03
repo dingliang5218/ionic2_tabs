@@ -2,7 +2,7 @@
 <widget id="com.kit.ionic2tabs" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ionic2_tabs</name>
     <description>An awesome Ionic/Cordova app.</description>
-    <author email="dingliang5218@163.com" href="http://www.gzkit.com.cn/">上海昊铎科技有限公司</author>
+    <author email="dingliang5218@163.com" href="http://www.baidu.com/">上海昊铎科技有限公司</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
@@ -13,6 +13,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+        <preference name="loadUrlTimeoutValue" value="700000" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />

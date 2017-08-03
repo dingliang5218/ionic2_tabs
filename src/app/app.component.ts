@@ -14,7 +14,7 @@ import {AppConfig} from "./app.config";
 import {BusHttpAPI} from "../providers/BusHttpAPI";
 import {Utils} from "../providers/Utils";
 import {DomSanitizer} from "@angular/platform-browser";
-import {resolve} from "url";
+// import {resolve} from "url";
 import {RobotMQTT} from "../providers/robot-mqtt";
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import 'webrtc-adapter/out/adapter.js';

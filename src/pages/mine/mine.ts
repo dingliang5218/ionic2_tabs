@@ -4,7 +4,7 @@ import {Storage} from '@ionic/storage';
 import {Platform, NavController, ModalController, AlertController, Events} from 'ionic-angular';
 import {MineEditAvatarModalPage} from './mine-edit-avatar-modal/mine-edit-avatar-modal';
 import {Helper} from "../../providers/Helper";
-import {DEFAULT_AVATAR, EVENTS_ROBOT_STATUS, EVENTS_ROBOT_STATUS2} from "../../providers/Constants";
+import {DEFAULT_AVATAR, EVENTS_ROBOT_STATUS2} from "../../providers/Constants";
 import {AboutPage} from "./about/about";
 import {NativeService} from "../../providers/NativeService";
 import {SuperPage} from "../common/SuperPage";
