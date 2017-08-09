@@ -30,6 +30,7 @@ export const ERROR_MESSAGE09='user not existed';
 export const EVENTS_ROBOT_STATUS='robotstatus_';
 export const EVENTS_ROBOT_STATUS2='robotstatus2_';
 export const EVENTS_ROBOT_SELECTED='robotselected';
+export const EVENTS_ROBOT_SELECTED_NAME='robotselected_name';
 export const EVENTS_USER_PUBLISH='$IOT/spark';
 export const EVENTS_USER_WEBRTC='USER_WEBRTC';
 export const EVENTS_USER_WEBRTC_CALL='call';

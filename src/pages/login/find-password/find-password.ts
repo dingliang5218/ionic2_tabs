@@ -1,15 +1,12 @@
 import {Component} from '@angular/core';
 import {NavController, ViewController} from 'ionic-angular';
 import {FormBuilder} from '@angular/forms';
-import {LoginPage} from '../login';
 import {Validators} from '../../../providers/Validators'
 import {Observable} from "rxjs";
 import {LoginService} from "../LoginService";
-import {Response} from "@angular/http";
 import {Utils} from "../../../providers/Utils";
 import {NativeService} from "../../../providers/NativeService";
 import {BusHttpAPI} from "../../../providers/BusHttpAPI";
-import {Helper} from "../../../providers/Helper";
 
 @Component({
   selector: 'page-find-password',

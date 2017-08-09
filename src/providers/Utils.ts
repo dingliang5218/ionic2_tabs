@@ -6,7 +6,7 @@
  */
 import {Injectable} from '@angular/core';
 import {Md5} from "ts-md5/dist/md5";
-import {DateTime} from "ionic-angular";
+// import {DateTime} from "ionic-angular";
 import {
   ERROR_MESSAGE01, ERROR_MESSAGE02, ERROR_MESSAGE03, ERROR_MESSAGE04, ERROR_MESSAGE05,
   ERROR_MESSAGE06, ERROR_MESSAGE07, ERROR_MESSAGE08, ERROR_MESSAGE09

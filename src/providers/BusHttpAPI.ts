@@ -2,11 +2,11 @@ import {Injectable} from "@angular/core";
 import {Storage} from "@ionic/storage";
 import {NativeService} from "./NativeService";
 import {Headers, Http, RequestOptions, Response} from "@angular/http";
-import {Observable} from "rxjs/Observable";
-import {CONTROL_ACT_VERIFYCODE, CONTROL_URL_HTTP, ERROR_MESSAGE04} from "./Constants";
+// import {Observable} from "rxjs/Observable";
+import { CONTROL_URL_HTTP, ERROR_MESSAGE04} from "./Constants";
 import {Utils} from "./Utils";
 import {AppConfig} from "../app/app.config";
-import {App, Events} from "ionic-angular";
+import { Events} from "ionic-angular";
 /**
  * Created by lding on 2017/4/26.
  */

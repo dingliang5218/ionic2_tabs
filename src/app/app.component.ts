@@ -8,16 +8,20 @@ import {Helper} from "../providers/Helper";
 import {HomePage} from "../pages/home/home";
 import {BarcodeScanner} from "@ionic-native/barcode-scanner";
 import {MineEditModalPage} from "../pages/mine/mine-edit-modal/mine-edit-modal";
-import {DEFAULT_AVATAR, EVENTS_ROBOT_SELECTED, EVENTS_ROBOT_STATUS, EVENTS_ROBOT_STATUS2} from "../providers/Constants";
+import {
+  DEFAULT_AVATAR, EVENTS_ROBOT_SELECTED, EVENTS_ROBOT_SELECTED_NAME, EVENTS_ROBOT_STATUS,
+  EVENTS_ROBOT_STATUS2
+} from "../providers/Constants";
 import {AboutPage} from "../pages/mine/about/about";
 import {AppConfig} from "./app.config";
 import {BusHttpAPI} from "../providers/BusHttpAPI";
 import {Utils} from "../providers/Utils";
 import {DomSanitizer} from "@angular/platform-browser";
-import {resolve} from "url";
+// import {resolve} from "url";
 import {RobotMQTT} from "../providers/robot-mqtt";
 // import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import 'webrtc-adapter/out/adapter.js';
+import {GlobalData} from "../providers/GlobalData";
 
 declare var AppMinimize;
 declare var cordova: any;
@@ -93,14 +97,15 @@ export class MyApp {
             if(!this.userInfo['avatar'])
               this.userInfo['avatar']=DEFAULT_AVATAR;
 
-            console.log('mobile:'+this.userInfo['mobile']+'|nick:'+this.userInfo['nick']
-              +'|name:'+this.userInfo['name']+'|email:'+this.userInfo['email']);
+            // console.log('mobile:'+this.userInfo['mobile']+'|nick:'+this.userInfo['nick']
+            //   +'|name:'+this.userInfo['name']+'|email:'+this.userInfo['email']);
 
             this.storage.get('upass').then((res)=>{
               this.mqtt.connectToMqtt(this.userInfo['mobile'],res);
             });
 
             this.initPage();
+            this.ititSelectedRobot();
 
           }
           this.menuCtrl.close('filterMenu');
@@ -123,17 +128,34 @@ export class MyApp {
   }
 
   freshData(){
+    return new Promise((resolve,reject) => {
     this.storage.get('UserInfo').then( res =>{
       if(res){
         this.userInfo = JSON.parse(res);
         console.log(this.userInfo);
         this.initPage();
+        this.http.post('', Utils.buildPayLoad(this.userInfo['mobile'] + '@user', 'admin@robot', 'rosterListOfUser', '1', {}), 'rosterListOfUser')
+          .then((res:any)=>{
+            this.roleUser = res;
+            resolve();
+
+          });
       }
     });
-    this.http.post('', Utils.buildPayLoad(this.userInfo['mobile'] + '@user', 'admin@robot', 'rosterListOfUser', '1', {}), 'rosterListOfUser')
-      .then((res:any)=>{
-        this.roleUser = res;
-      });
+    // this.http.post('', Utils.buildPayLoad(this.userInfo['mobile'] + '@user', 'admin@robot', 'rosterListOfUser', '1', {}), 'rosterListOfUser')
+    //   .then((res:any)=>{
+    //     this.roleUser = res;
+    //
+    //
+    //     console.log('-----------------------------------------------------------------------------------');
+    //     console.log('this.roleUser:'+this.roleUser);
+    //     console.log('this.roleUser[0]:'+this.roleUser[0]);
+    //
+    //     console.log('-----------------------------------------------------------------------------------');
+    //
+    //
+    //   });
+  });
   }
 
   assertNetwork() {
@@ -146,44 +168,48 @@ export class MyApp {
     this.storage.get('UserInfo').then(res =>{
       // if(1==1){
       //
-      // }else
+      // }else {
 
-      if(res){
+        if (res) {
 
-        // this.nativeService.presentAlert(res);
-        this.userInfo = JSON.parse(res);
-        console.log('mobile:'+this.userInfo['mobile']+'|nick:'+this.userInfo['nick']
-            +'|name:'+this.userInfo['name']+'|email:'+this.userInfo['email']);
-        if(!this.userInfo['avatar'])
-          this.userInfo['avatar']=DEFAULT_AVATAR;
+          // this.nativeService.presentAlert(res);
+          this.userInfo = JSON.parse(res);
+          // console.log('mobile:' + this.userInfo['mobile'] + '|nick:' + this.userInfo['nick']
+          //   + '|name:' + this.userInfo['name'] + '|email:' + this.userInfo['email']);
+          if (!this.userInfo['avatar'])
+            this.userInfo['avatar'] = DEFAULT_AVATAR;
 
-        this.storage.get('upass').then((res)=>{
-          this.mqtt.connectToMqtt(this.userInfo['mobile'],res);
-        });
-        this.initPage();
-        AppConfig.setUserInfo(res);
-      }else{
-        this.clearInfoCache();
-        this.helper.goLogin(res => {
-          // this.token = res2;
-          this.userInfo = res.userInfo;
-          this.roleUser = res.roleUser;
-          console.log('*************************************************');
-          console.log(this.roleUser);
-          console.log(JSON.stringify(this.roleUser));
-
-          if(!this.userInfo['avatar'])
-            this.userInfo['avatar']=DEFAULT_AVATAR;
-
-          console.log('mobile:'+this.userInfo['mobile']+'|nick:'+this.userInfo['nick']
-            +'|name:'+this.userInfo['name']+'|email:'+this.userInfo['email']);
-          this.storage.get('upass').then((res)=>{
-            this.mqtt.connectToMqtt(this.userInfo['mobile'],res);
+          this.storage.get('upass').then((res) => {
+            this.mqtt.connectToMqtt(this.userInfo['mobile'], res);
           });
           this.initPage();
-        });
-      }
+          this.ititSelectedRobot();
+          AppConfig.setUserInfo(res);
+        } else {
+          this.clearInfoCache();
+          this.helper.goLogin(res => {
+            // this.token = res2;
+            this.userInfo = res.userInfo;
+            this.roleUser = res.roleUser;
+            console.log('*************************************************');
+            console.log(this.roleUser);
+            console.log(JSON.stringify(this.roleUser));
+
+            if (!this.userInfo['avatar'])
+              this.userInfo['avatar'] = DEFAULT_AVATAR;
+
+            // console.log('mobile:' + this.userInfo['mobile'] + '|nick:' + this.userInfo['nick']
+            //   + '|name:' + this.userInfo['name'] + '|email:' + this.userInfo['email']);
+            this.storage.get('upass').then((res) => {
+              this.mqtt.connectToMqtt(this.userInfo['mobile'], res);
+            });
+            this.initPage();
+            this.ititSelectedRobot();
+          });
+        }
+      // }
     });
+
   }
 
 
@@ -193,7 +219,14 @@ export class MyApp {
         console.log('Barcode Format ->' + barcodeData.format);
         console.log('Cancelled -> ' + barcodeData.cancelled);
 
-        if (barcodeData.cancelled == false) {
+        let flag =true;
+        console.log('is number:'+typeof barcodeData.cancelled =='number');
+        console.log('is string:'+typeof barcodeData.cancelled =='string');
+
+        if(typeof barcodeData.cancelled =='number' && barcodeData.cancelled==1)
+            flag =false;
+
+        if (flag==false ||barcodeData.cancelled == false ) {
 
           var param = {
             'deviceId': 'robot1719000001',
@@ -291,6 +324,38 @@ export class MyApp {
   }
 
 
+  ititSelectedRobot(){
+    this.freshData().then(res =>{
+
+      let robot;
+      this.storage.get('robot').then(res=>{
+        // console.log(')))))))))))))))))))))))))))))))))))))');
+        // if(this.roleUser.length==0){
+        //   console.log(')))))))))))))))))))))))))))))))))))))');
+        //   this.nativeService.presentAlert("请首先添加设备！");
+        //   this.scanBarcode();
+        // }else
+
+          if(res){
+          robot = JSON.parse(res);
+          for (let item of this.roleUser){
+            if(item['deviceId']==robot['deviceId']){
+              console.log(item);
+              this.goSelectedRobot(item);
+              break;
+            }
+          }
+          this.goSelectedRobot(this.roleUser[0]);
+        }else {
+          this.goSelectedRobot(this.roleUser[0]);
+        }
+      });
+
+    });
+
+
+
+  }
 
 
   initPage() {
@@ -304,6 +369,21 @@ export class MyApp {
     //   this.avatarBase64 = Utils.converAvartarToBase64(<string>avatarPath);
     // });
     this.avatarBase64 =this.userInfo['avatar'];
+  }
+
+  goSelectedRobot(item){
+
+    this.storage.set('robot',JSON.stringify(item));
+    this.unSubscribeTopic();
+    console.log('*********************************publish EVENTS_ROBOT_SELECTED:'+item.deviceId);
+    this.events.publish(EVENTS_ROBOT_SELECTED,item.deviceId);
+
+    // this.storage.set('mobile',this.userInfo['mobile']).then((res) =>{
+    console.log('*********************************publish EVENTS_ROBOT_SELECTED_NAME:'+item.deviceNick);
+    this.events.publish(EVENTS_ROBOT_SELECTED_NAME,item.deviceNick);
+    // });
+
+    this.menuCtrl.close('filterMenu');
   }
 
   clearInfoCache(){
@@ -327,7 +407,7 @@ export class MyApp {
     },err =>{
       // console.log('storeage.token.err:'+err+'|'+JSON.stringify(err));
     })
-    this.storage.remove('robot');
+    // this.storage.remove('robot');
 
     AppConfig.setPass('');
     AppConfig.setMobile('');
@@ -346,16 +426,6 @@ export class MyApp {
       this.events.unsubscribe(EVENTS_ROBOT_STATUS+this.roleUser[i]['deviceId']);
       this.events.unsubscribe(EVENTS_ROBOT_STATUS2+this.roleUser[i]['deviceId']);
     }
-  }
-
-  goSelectedRobot(item){
-
-    this.storage.set('robot',JSON.stringify(item));
-    this.unSubscribeTopic();
-    console.log('*********************************publish EVENTS_ROBOT_SELECTED:'+item.deviceId);
-    this.events.publish(EVENTS_ROBOT_SELECTED,item.deviceId);
-
-    this.menuCtrl.close('filterMenu');
   }
 
   loginOut() {
@@ -389,7 +459,7 @@ export class MyApp {
                   });
 
                   this.initPage();
-
+                  this.ititSelectedRobot();
                 }
                 this.menuCtrl.close('filterMenu');
               });

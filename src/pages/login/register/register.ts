@@ -8,7 +8,6 @@ import {Utils} from "../../../providers/Utils";
 import {NativeService} from "../../../providers/NativeService";
 import {Storage} from "@ionic/storage";
 import { ViewController} from 'ionic-angular';
-import {Helper} from "../../../providers/Helper";
 
 @Component({
   selector: 'page-register',
@@ -38,7 +37,6 @@ export class RegisterPage {
 
     console.log(mobile);
     var reg1 = /^[1][34578]\d{9}$/;
-    var params = { "phone": mobile.username };
 
     if (!mobile.username) {
 
@@ -64,7 +62,7 @@ export class RegisterPage {
     var param = {'upass': Utils.getStrMD5(user.password), 'mobile': user.username, 'verifycode': user.verificationCode};
     this.http.post('', Utils.buildPayLoad(user.username + '@user', 'admin@robot', 'userRegister', '1', param), 'userRegister')
       .then((res: any) => {
-        this.uiService.presentAlert(res.token);
+        // this.uiService.presentAlert(res.token);
         this.subscription.unsubscribe();
         this.description = "获取验证码";
         this.canClick = false;

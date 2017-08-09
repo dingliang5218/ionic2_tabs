@@ -54,8 +54,8 @@ export class MineEditModalPage {
     // this.userInfo = params.data;
     this.avatarPath = Utils.converAvartarToBase64(this.userInfo.avatar);
     this.userForm = this.formBuilder.group({
-      // mobile: [this.userInfo.mobile, [Validators.required, Validators.phone]],
-      mobile: ['18658862110', [Validators.required, Validators.phone]],
+      mobile: [this.userInfo.mobile, [Validators.required, Validators.phone]],
+      // mobile: ['18658862110', [Validators.required, Validators.phone]],
       name: [this.userInfo.name, [Validators.required, Validators.maxLength(4)]],
       nick: [this.userInfo.nick, [Validators.required, Validators.maxLength(6)]],
       email: [this.userInfo.email, [Validators.required, Validators.email]]

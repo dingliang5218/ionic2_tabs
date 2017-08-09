@@ -1,4 +1,4 @@
-import {UserInfo} from "../model/UserInfo";
+// import {UserInfo} from "../model/UserInfo";
 /**
  * Created by lding on 2017/4/25.
  */

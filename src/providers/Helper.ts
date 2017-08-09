@@ -5,7 +5,7 @@ import {Injectable} from '@angular/core';
 
 import {ModalController} from "ionic-angular";
 import {LoginPage} from "../pages/login/login";
-import {DEFAULT_AVATAR, FILE_SERVE_URL} from "./Constants";
+import {DEFAULT_AVATAR} from "./Constants";
 import {FileService} from "./FileService";
 import {Storage} from "@ionic/storage";
 
@@ -17,8 +17,7 @@ import {Storage} from "@ionic/storage";
 export class Helper {
 
   constructor(private modalCtrl: ModalController,
-              private storage: Storage,
-              private fileService: FileService) {
+              private storage: Storage) {
   }
 
 
@@ -76,7 +75,7 @@ export class Helper {
       return year + '-' + month + '-' + day;
     };
 
-    const now = formatDate( new Date().getTime() ); // 当前时间
+    // const now = formatDate( new Date().getTime() ); // 当前时间
     const resultArr: Array<any> = [];
     let changeDate: string;
     if ( range ) {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import {Paho} from 'ng2-mqtt/mqttws31';
-import {EVENTS_ROBOT_STATUS, EVENTS_USER_PUBLISH, MQTT_WS_PORT, MQTT_WS_URL} from "./Constants";
+import {EVENTS_ROBOT_STATUS, MQTT_WS_PORT, MQTT_WS_URL} from "./Constants";
 import {Events} from "ionic-angular";
 
 /*
@@ -18,7 +18,6 @@ export class RobotMQTT {
   private upass='';
 
   public robotStatus=0;
-  private robotStatusChanged=false;
 
   client :any;
   message:any;
@@ -80,8 +79,9 @@ export class RobotMQTT {
       this.message= new Paho.MQTT.Message(payload);
       this.message.destinationName = topic;
 
-      this.client.send(this.message);
-      resolve();
+      this.client.send(this.message)
+        resolve();
+
     });
 
   }

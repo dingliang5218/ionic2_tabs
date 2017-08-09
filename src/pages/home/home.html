@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>小昊机器人
+    <ion-title>小昊机器人-{{robotname==''?'请选择设备':robotname}}
       <img *ngIf="robotStauts==1" src="./assets/img/online.png">
       <img *ngIf="robotStauts==0" src="./assets/img/offline.png">
     </ion-title>

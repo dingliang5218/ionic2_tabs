@@ -253,7 +253,8 @@ export class CallModalPage {
     console.log('data:' + data);
 
     this.mqtt.publish(EVENTS_USER_PUBLISH, JSON.stringify(Utils.buildPayLoad(this.robot['userId'] + '@user', this.robot['deviceId'] + '@device',
-      'sessionProcess', 5, {'cmd': 'answer', 'payload': data}))).then(() => {
+      'sessionProcess', 5, {'cmd': 'answer', 'payload': data})))
+      .then(() => {
       this.answerFlag = true;
       for (let i = 0; i < this.candinateList.length; i++) {
         let cad = this.candinateList[i];

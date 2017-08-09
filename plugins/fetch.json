@@ -169,22 +169,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-iosrtc": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-iosrtc"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-swift-support": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-swift-support"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-nativeaudio": {
         "source": {
             "type": "registry",
@@ -205,6 +189,22 @@
         "source": {
             "type": "registry",
             "id": "android-camera-permission"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-swift-support": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-swift-support@^3.1.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-iosrtc": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-iosrtc@^4.0.2"
         },
         "is_top_level": true,
         "variables": {}

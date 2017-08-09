@@ -10,7 +10,7 @@
         "spec": "latest",
         "type": "tag"
       },
-      "/Users/lding/Desktop/ionic2_tabs/node_modules"
+      "/Users/lding/Desktop/xdgcInterTest/ionic2_tabs/node_modules"
     ]
   ],
   "_cnpm_publish_time": 1487105461598,
@@ -51,7 +51,7 @@
   "_shasum": "0ee58068fb65066a0126480ef9af3a4618c6b0c1",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-swift-support",
-  "_where": "/Users/lding/Desktop/ionic2_tabs/node_modules",
+  "_where": "/Users/lding/Desktop/xdgcInterTest/ionic2_tabs/node_modules",
   "bugs": {
     "url": "https://github.com/bitjson/cordova-plugin-swift-support/issues"
   },

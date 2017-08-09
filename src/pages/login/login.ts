@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalController, ViewController, NavController} from 'ionic-angular';
+import {ModalController, ViewController,Events} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {FormBuilder} from '@angular/forms';
 import {Validators} from '../../providers/Validators'
@@ -13,6 +13,7 @@ import {BusHttpAPI} from "../../providers/BusHttpAPI";
 import {Utils} from "../../providers/Utils";
 import {AppConfig} from "../../app/app.config";
 import {RobotMQTT} from "../../providers/robot-mqtt";
+import {EVENTS_ROBOT_SELECTED, EVENTS_ROBOT_SELECTED_NAME} from "../../providers/Constants";
 
 
 @Component({
@@ -32,7 +33,8 @@ export class LoginPage {
               private storage: Storage,
               private modalCtrl: ModalController,
               private mqtt :RobotMQTT,
-              private http:BusHttpAPI
+              private http:BusHttpAPI,
+              private events: Events
               // private storage:StorageService
   ) {
 
@@ -93,6 +95,17 @@ export class LoginPage {
               console.log('set upass successful');
               AppConfig.setMobile(user.username);
               AppConfig.setPass(Utils.getStrMD5(user.password).toString());
+
+              if(this.mobile !=user.username){
+                // this.events.unsubscribe(EVENTS_ROBOT_SELECTED);
+                // this.events.unsubscribe(EVENTS_ROBOT_SELECTED_NAME);
+
+                this.events.publish(EVENTS_ROBOT_SELECTED,'');
+                this.events.publish(EVENTS_ROBOT_SELECTED_NAME,'');
+
+                this.storage.remove('robot');
+              }
+
               this.storage.set('mobile',user.username);
               this.submitted = false;
               var param2 ={

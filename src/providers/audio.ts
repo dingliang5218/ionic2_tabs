@@ -2,7 +2,6 @@
 
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { NativeAudio } from '@ionic-native/native-audio';
 import { Config } from '../app/config';
 
 @Injectable()
