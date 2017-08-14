@@ -79,8 +79,15 @@ export class CallModalPage {
 
     this.peerConnectionConfig = {
       'iceServers': [{
-        "url": 'stun:139.196.26.94:9999'
-      }]
+        "url": 'stun:139.196.26.94:3478'
+      },
+        {
+          "url":'turn:139.196.26.94:3478',
+          "username": "test",
+          "credential": "Hd2017Test"
+        }
+
+      ]
     };
 
     window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
