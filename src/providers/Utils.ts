@@ -1,9 +1,3 @@
-/**
- * Created by yanxiaojun617@163.com on 12-27.
- */
-/**
- * Created by yanxiaojun617@163.com on 12-27.
- */
 import {Injectable} from '@angular/core';
 import {Md5} from "ts-md5/dist/md5";
 // import {DateTime} from "ionic-angular";

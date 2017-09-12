@@ -1,5 +1,4 @@
 /**
- * Created by yanxiaojun617@163.com on 12-27.
  */
 import {Injectable} from '@angular/core';
 import {ToastController, LoadingController, Platform, Loading, AlertController} from 'ionic-angular';
@@ -130,7 +129,7 @@ export class NativeService {
    * @param message 信息内容
    * @param duration 显示时长
    */
-  showToast(message: string = '操作完成', duration: number = 3000): void {
+   showToast(message: string = '操作完成', duration: number = 3000): void {
     if (this.isMobile()) {
       this.toast.show(message, String(duration), 'center').subscribe();
     } else {

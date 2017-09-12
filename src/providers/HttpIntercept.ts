@@ -1,6 +1,3 @@
-/**
- * Created by yanxiaojun617@163.com on 12-27.
- */
 import {Injectable} from '@angular/core';
 import {Http, Response, RequestOptions, ConnectionBackend, RequestOptionsArgs} from '@angular/http';
 

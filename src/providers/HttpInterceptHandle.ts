@@ -1,6 +1,3 @@
-/**
- * Created by yanxiaojun617@163.com on 2-25.
- */
 import {Events} from 'ionic-angular';
 import {Injectable} from '@angular/core';
 import {NativeService} from "./NativeService";

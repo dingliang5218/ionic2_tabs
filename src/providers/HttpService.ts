@@ -1,5 +1,4 @@
 /**
- * Created by yanxiaojun617@163.com on 12-27.
  */
 import {Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions, URLSearchParams, RequestOptionsArgs} from '@angular/http';

@@ -1,5 +1,4 @@
 /**
- * Created by yanxiaojun617@163.com on 12-23.
  */
 import {Injectable} from '@angular/core';
 import {HttpService} from "./HttpService";
